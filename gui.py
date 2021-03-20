@@ -1,4 +1,6 @@
 import tkinter as tk
+import mysql.connector
+sqid=1
 window = tk.Tk()
 window.title("Contact Tracer")
 window.geometry("960x640")
@@ -17,6 +19,9 @@ def submit():
   email_id = email_id_var.get()
   vaccine_status = vaccine_status_var.get()
   covid_status = covid_status_var.get()
+  connection = mysql.connector.connect(host="192.168.43.78",database='trackerdb',user='DJ',password='Password')
+  cursor = connection.cursor()
+  Query = """    INSERT INTO Clients(id, name, email_id, covid_status, vaccine_status) VALUES (sqid,name,email_id,covid_status,vaccine_status)"""
   display = tk.Tk()
   display.title("Add Your Contacts")
   def add():

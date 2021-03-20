@@ -15,6 +15,8 @@ def submit():
   covid_status = covid_status_var.get()
   print(name)
   print(email_id)
+  print(vaccine_status)
+  print(covid_status)
 
 #name
 name_lb = tk.Label(window,text = "Name", font=("Times New Roman", 12), bg="white").place(x=60,y=400)
@@ -28,8 +30,8 @@ covid_r1 = tk.Radiobutton(window, text="Yes", variable=covid_status_var, value= 
 covid_r2 = tk.Radiobutton(window, text="No", variable=covid_status_var, value= False).place(x=330,y=460)
 #vaccine status
 vaccine_lb = tk.Label(window,text = "Did you get vaccine ?", font=("Times New Roman", 12), bg="white").place(x=60,y=490)
-vaccine_r1 = tk.Radiobutton(window, text="Yes1", variable=vaccine_status_var, value= True).place(x=280,y=490)
-vaccine_r2 = tk.Radiobutton(window, text="No1", variable=vaccine_status_var, value= False).place(x=330,y=490)
+vaccine_r1 = tk.Radiobutton(window, text="Yes", variable=vaccine_status_var, value= True).place(x=280,y=490)
+vaccine_r2 = tk.Radiobutton(window, text="No", variable=vaccine_status_var, value= False).place(x=330,y=490)
 #submit button
 submit_bt = tk.Button(window,text = "SUBMIT",fg="white", bg="black",command = submit).place(x = 100,y = 600)
 

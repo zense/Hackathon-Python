@@ -4,8 +4,8 @@ window.title("Contact Tracer")
 window.geometry("1000x800")
 name_var = tk.StringVar()
 email_id_var = tk.StringVar()
-vaccine_status_var = 0
-covid_status_var = 0
+vaccine_status_var = tk.BooleanVar()
+covid_status_var = tk.BooleanVar()
 
 #function when submit button is clicked
 def submit():

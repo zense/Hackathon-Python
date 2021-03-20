@@ -1,7 +1,10 @@
 import tkinter as tk
 window = tk.Tk()
 window.title("Contact Tracer")
-window.geometry("1000x800")
+window.geometry("960x640")
+img = tk.PhotoImage(file="window.png")
+imglbl = tk.Label(window, image=img)
+imglbl.place(x=0, y=0)
 name_var = tk.StringVar()
 email_id_var = tk.StringVar()
 vaccine_status_var = tk.BooleanVar()
@@ -15,8 +18,10 @@ def submit():
   vaccine_status = vaccine_status_var.get()
   covid_status = covid_status_var.get()
   display = tk.Tk()
+  display.title("Add Your Contacts")
   def add():
     add_contacts = tk.Tk()
+    add_contacts.title("Contacts Information")
     add_name_var = tk.StringVar()
     add_email_id_var = tk.StringVar()
     #name

@@ -13,10 +13,8 @@ def submit():
   email_id = email_id_var.get()
   vaccine_status = vaccine_status_var.get()
   covid_status = covid_status_var.get()
-  print(name)
-  print(email_id)
-  print(vaccine_status)
-  print(covid_status)
+  window.destroy()
+  
 
 #name
 name_lb = tk.Label(window,text = "Name", font=("Times New Roman", 12), bg="white").place(x=60,y=400)

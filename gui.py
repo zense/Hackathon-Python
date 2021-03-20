@@ -1,12 +1,11 @@
 import tkinter as tk
 import mysql.connector
-sqid=1
 window = tk.Tk()
 window.title("Contact Tracer")
 window.geometry("960x640")
-img = tk.PhotoImage(file="window.png")
-imglbl = tk.Label(window, image=img)
-imglbl.place(x=0, y=0)
+#img = tk.PhotoImage(file="window.png")
+#imglbl = tk.Label(window, image=img)
+#imglbl.place(x=0, y=0)
 name_var = tk.StringVar()
 email_id_var = tk.StringVar()
 vaccine_status_var = tk.BooleanVar()
@@ -15,14 +14,19 @@ contacts_name_lst = []
 contacts_email_id_lst = []
 #function when submit button is clicked
 def submit():
+  sqid=1
   name = name_var.get()
   email_id = email_id_var.get()
   vaccine_status = vaccine_status_var.get()
   covid_status = covid_status_var.get()
-  connection = mysql.connector.connect(host="192.168.43.78",database='trackerdb',user='DJ',password='Password')
+  connection = mysql.connector.connect(host="localhost",database='trackerdb',user='DJ',password='Password')
   cursor = connection.cursor()
-  Query = """    INSERT INTO Clients(id, name, email_id, covid_status, vaccine_status) VALUES (sqid,name,email_id,covid_status,vaccine_status)"""
-  display = tk.Tk()
+  Query = "INSERT INTO Clients VALUE (name,email_id,covid_status,vaccine_status);"
+  result = cursor.execute(Query)
+  connection.commit()
+  cursor.close()
+  connection.close()
+  display = tk.Tk()        
   display.title("Add Your Contacts")
   def add():
     add_contacts = tk.Tk()

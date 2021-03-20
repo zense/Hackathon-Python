@@ -24,4 +24,3 @@ And it's not just about the award, if you are interested after the hackathon to 
 
 Regards,
 Vikas
-

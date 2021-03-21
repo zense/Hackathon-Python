@@ -34,7 +34,7 @@ infoObject = pygame.display.Info()  # finding screen resolution
 width = infoObject.current_w
 height = infoObject.current_w/2
 
-pygame.display.set_caption("Wolfenstein")
+pygame.display.set_caption("Wall Renderer")
 screen=pygame.display.set_mode((int(width),int(height)))
 
 playerX = 0
@@ -98,7 +98,7 @@ while(running):
     
     column_number=0
     Alpha=Thita-hFOV/2
-    prev_wall=-1;
+    prev_wall=-1
     while(Alpha<=Thita+hFOV/2):
 
         Alpha1=Alpha
@@ -169,7 +169,7 @@ while(running):
                     else:
                         dist_min=distance_from_player
                         c=c1
-        if(dist_min<=0 or dist_min>256):
+        if(dist_min<=0 or dist_min>255):
             brightness=255
             height_of_drawn_column=0
         else:
@@ -177,11 +177,12 @@ while(running):
             height_of_drawn_column=height*(height_of_wall/2/dist_min)
         if(prev_wall==-1):
             prev_wall=c
-        pygame.draw.line(screen,(256-brightness,0,0),((column_number),(height/2-10-height_of_drawn_column)),((column_number),(height/2-height_of_drawn_column)),int(width*math.pi/1800/hFOV)+1)
+        
+        pygame.draw.line(screen,(255-brightness,0,0),((column_number),(height/2-10-height_of_drawn_column)),((column_number),(height/2-height_of_drawn_column)),int(width*math.pi/1800/hFOV)+1)
         pygame.draw.line(screen,(0,brightness,0),((column_number),(height/2-height_of_drawn_column)),((column_number),(height/2+height_of_drawn_column)),int(width*math.pi/1800/hFOV)+1)
-        pygame.draw.line(screen,(256-brightness,0,0),((column_number),(height/2+10+height_of_drawn_column)),((column_number),(height/2+height_of_drawn_column)),int(width*math.pi/1800/hFOV)+1)
+        pygame.draw.line(screen,(255-brightness,0,0),((column_number),(height/2+10+height_of_drawn_column)),((column_number),(height/2+height_of_drawn_column)),int(width*math.pi/1800/hFOV)+1)
         if(not prev_wall==c):
-        	pygame.draw.line(screen,(256-brightness,0,0),((column_number),(height/2-height_of_drawn_column)),((column_number),(height/2+height_of_drawn_column)),10)
+        	pygame.draw.line(screen,(255-brightness,0,0),((column_number),(height/2-height_of_drawn_column)),((column_number),(height/2+height_of_drawn_column)),10)
         	prev_wall=c
         column_number+=width*math.pi/1800/hFOV
         

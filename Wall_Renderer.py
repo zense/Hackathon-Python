@@ -75,20 +75,26 @@ while(running):
         if event.type==pygame.QUIT:
             running=False
         pressed_keys=pygame.key.get_pressed()
+        if pressed_keys[pygame.K_j]:
+            Thita-=math.pi/90
+            if(Thita<=-math.pi):
+                Thita+=2*math.pi
+        if pressed_keys[pygame.K_l]:
+            Thita+=math.pi/90
+            if(Thita>math.pi):
+                Thita-=2*math.pi
         if pressed_keys[pygame.K_w] and abs(playerX-math.cos(Thita)*circum_radius/128)+abs(playerY-math.sin(Thita)*circum_radius/128)<circum_radius:
             playerX-=math.cos(Thita)*circum_radius/128
             playerY-=math.sin(Thita)*circum_radius/128
         if pressed_keys[pygame.K_s] and abs(playerX+math.cos(Thita)*circum_radius/128)+abs(playerY+math.sin(Thita)*circum_radius/128)<circum_radius:
             playerX+=math.cos(Thita)*circum_radius/128
             playerY+=math.sin(Thita)*circum_radius/128
-        if pressed_keys[pygame.K_a]:
-            Thita-=math.pi/90
-            if(Thita<=-math.pi):
-                Thita+=2*math.pi
-        if pressed_keys[pygame.K_d]:
-            Thita+=math.pi/90
-            if(Thita>math.pi):
-                Thita-=2*math.pi
+        if pressed_keys[pygame.K_a] and abs(playerX-math.sin(Thita)*circum_radius/128)+abs(playerY+math.cos(Thita)*circum_radius/128)<circum_radius:
+            playerY+=math.cos(Thita)*circum_radius/128
+            playerX-=math.sin(Thita)*circum_radius/128
+        if pressed_keys[pygame.K_d] and abs(playerX+math.sin(Thita)*circum_radius/128)+abs(playerY-math.cos(Thita)*circum_radius/128)<circum_radius:
+            playerY-=math.cos(Thita)*circum_radius/128
+            playerX+=math.sin(Thita)*circum_radius/128
     
     column_number=0
     Alpha=Thita-hFOV/2

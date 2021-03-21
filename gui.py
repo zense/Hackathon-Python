@@ -3,6 +3,9 @@ import mysql.connector
 window = tk.Tk()
 window.title("Contact Tracer")
 window.geometry("960x640")
+#img = tk.PhotoImage(file="window.png")
+#imglbl = tk.Label(window, image=img)
+#imglbl.place(x=0, y=0)
 name_var = tk.StringVar()
 email_id_var = tk.StringVar()
 vaccine_status_var = tk.BooleanVar()
@@ -71,7 +74,8 @@ def submit():
     covid_r1 = tk.Radiobutton(update, text="Yes", variable=covid_status_var, value=1).place(x=280, y=460)
     covid_r2 = tk.Radiobutton(update, text="No", variable=covid_status_var, value=0).place(x=330, y=460)
     # vaccine status
-    vaccine_lb = tk.Label(window, text="Did you get vaccine ?", font=("Times New Roman", 12), bg="white").place(x=60, y=490)
+    vaccine_lb = tk.Label(window, text="Did you get vaccine ?", font=("Times New Roman", 12), bg="white").place(x=60,
+                                                                                                                y=490)
     vaccine_r1 = tk.Radiobutton(update, text="Yes", variable=vaccine_status_var, value=1).place(x=280, y=490)
     vaccine_r2 = tk.Radiobutton(update, text="No", variable=vaccine_status_var, value=0).place(x=330, y=490)
     '''def function for updating these to database :

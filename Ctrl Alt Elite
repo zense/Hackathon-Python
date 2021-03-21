@@ -42,6 +42,14 @@ def submit():
     c_email_id_lb = tk.Label(add_contacts,text = "Email ID ", font=("Times New Roman", 12), bg="white").place(x=60,y=430)
     c_email_id_entry = tk.Entry(add_contacts,textvariable = add_email_id_var, font=("Times New Roman", 12), bg="white").place(x=280,y=430)
     def add_function(i):
+      connection = mysql.connector.connect(host="192.168.43.78",database='trackerdb',user='Remote',password='Password')
+      cursor = connection.cursor()
+      
+      sql1 = "select email_id from Clients"
+      cursor.execute(sql1)
+      
+      database=cursor.fetchall()
+     
       for email in database:
         if add_email_id_var.get() == email:
           #printing name in table

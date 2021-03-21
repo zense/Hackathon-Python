@@ -12,20 +12,20 @@ Keeping track of price of products in the online sites isnt an easy task. So thi
 The same idea can further developed and be used to keep a track of stock market. Tracking the price of Bitcoin, Gold or even the drops and gains in share market.
 
 
-**Screen Shots**
+**Screen Shots :**
 
-When the Price of the item reaches below your desired Price:
+#When the Price of the item reaches below your desired Price:
 ![](Screenshots/2.png)
 ![](Screenshots/2(2).png)
-Notification on our phone
+#Notification on our phone
 
 
 
-When the Price of the item is above your desired Price:
+#When the Price of the item is above your desired Price:
 ![](Screenshots/1.png)
-Code runs infinitey(Loops is executed again after specified time) and stops only when the price drops.
+#Code runs infinitey(Loops is executed again after specified time) and stops only when the price drops.
 ![](Screenshots/1(1).png)
-No Notification
+#No Notification
 
 **Installation and Running of the Program**
 

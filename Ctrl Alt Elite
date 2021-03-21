@@ -3,9 +3,6 @@ import mysql.connector
 window = tk.Tk()
 window.title("Contact Tracer")
 window.geometry("960x640")
-#img = tk.PhotoImage(file="window.png")
-#imglbl = tk.Label(window, image=img)
-#imglbl.place(x=0, y=0)
 name_var = tk.StringVar()
 email_id_var = tk.StringVar()
 vaccine_status_var = tk.BooleanVar()
@@ -13,7 +10,6 @@ covid_status_var = tk.BooleanVar()
 contacts_name_lst = []
 contacts_email_id_lst = []
 i = 0
-#function when submit button is clicked
 def submit():
   sqid=1
   name = name_var.get()
@@ -44,10 +40,8 @@ def submit():
     def add_function(i):
       connection = mysql.connector.connect(host="192.168.43.78",database='trackerdb',user='Remote',password='Password')
       cursor = connection.cursor()
-      
       sql1 = "select email_id from Clients"
       cursor.execute(sql1)
-      
       database=cursor.fetchall()
       connection.commit()
       cursor.close()

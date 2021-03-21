@@ -92,11 +92,11 @@ def submit():
       connection = mysql.connector.connect(host="192.168.43.78",database='trackerdb',user='Remote',password='Password')
       cursor = connection.cursor() 
       sql3= "Update Clients set covid_status=%s,vaccine_status=%s where email_id=%s"
-      cursor.execute(sql3,(.get(),.get(),.get()))
+      cursor.execute(sql3,(covid_status_var.get(),vaccine_status_var.get(),email_id_var.get()))
       connection.commit()
       cursor.close()
       connection.close()
-    submit_bt = tk.Button(update, text="Update", fg="white", bg="black", command='function for enetering values into database').place(x=100, y=600)
+    submit_bt = tk.Button(update, text="Update", fg="white", bg="black", command=update_button).place(x=100, y=600)
     update.destroy()
   add_contacts_bt = tk.Button(display, text="Add", command=add).pack()  # button in second window
   update_status = tk.Button(display,text = "Update my status",command = ).pack()          # button in second window

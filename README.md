@@ -19,16 +19,15 @@ The same idea can further developed and be used to keep a track of stock market.
 ![](Screenshots/2.png)
 
 #Notification on our phone
-
 ![](Screenshots/2(2).png)
 
 
 
 #When the Price of the item is above your desired Price:
 
+#Code runs infinitey(Loops is executed again after specified time) and stops only when the price drops.
 ![](Screenshots/1.png)
 
-#Code runs infinitey(Loops is executed again after specified time) and stops only when the price drops.
 
 #No Notification
 ![](Screenshots/1(1).png)

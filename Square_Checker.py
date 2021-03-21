@@ -1,8 +1,6 @@
 
 # This is a game in which a player with highest number of squares made wins at last
 
-import pygame
-from pygame import mixer
 from tkinter import *
 import numpy as np
 

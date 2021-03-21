@@ -6,7 +6,6 @@ import numpy as np
 
 
 
-
 # Defining Basic Heights And Widths Of Things
 
 size_of_board = 800

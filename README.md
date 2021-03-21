@@ -2,14 +2,15 @@
 
 **#Amazon Price Tracker**
 
-A python based project which tracks the price of an item on amazon and sends a notification on our phone when the price of the item drops below the desired price.
+A python-based project which tracks the price of an item on amazon and sends a pop-up notification on our phone when the price of the item drops below the desired price.
 The code runs an infinite loop which breaks only when the price of the item drops below the desired price.
 The function which checks the price drop runs after a specific amount of time(We have set it as 1 Hour).
 
-This project tracks just one product at a time.(Which can be listed as one of its limitations)
+Keeping track of price of products in the online sites is not an easy task. Price of products keep on fluctuating and we receive huge discounts during some days of festivals. So this project helps us by keeping track of price of a product and helps us in buying it at an affordable price.
 
-Keeping track of price of products in the online sites isnt an easy task. So this project after further developments can turn out to be a great asset.
-The same idea can further developed and be used to keep a track of stock market. Tracking the price of Bitcoin, Gold or even the drops and gains in share market.
+This project tracks just one product at a time(Which can be listed as one of its limitations).
+
+The same idea can further be developed and be used to keep a track of stock market. Tracking the price of Bitcoin, Gold or even the drops and gains in share markets.It helps the user buy and sell stocks at the right time.
 
 
 **Screen Shots :**

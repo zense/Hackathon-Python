@@ -14,7 +14,7 @@ The same idea can further developed and be used to keep a track of stock market.
 
 **Screen Shots :**
 
-#When the Price of the item reaches below your desired Price:
+**#When the Price of the item reaches below your desired Price:**
 
 ![](Screenshots/2.png)
 
@@ -23,7 +23,7 @@ The same idea can further developed and be used to keep a track of stock market.
 
 
 
-#When the Price of the item is above your desired Price:
+**#When the Price of the item is above your desired Price:**
 
 #Code runs infinitey(Loops is executed again after specified time) and stops only when the price drops.
 ![](Screenshots/1.png)

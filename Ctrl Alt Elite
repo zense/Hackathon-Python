@@ -99,7 +99,7 @@ def submit():
     submit_bt = tk.Button(update, text="Update", fg="white", bg="black", command=update_button).place(x=100, y=600)
     update.destroy()
   add_contacts_bt = tk.Button(display, text="Add", command=add).pack()  # button in second window
-  update_status = tk.Button(display,text = "Update my status",command = ).pack()          # button in second window
+  update_status = tk.Button(display,text = "Update my status",command = update_function ).pack()          # button in second window
   window.destroy()
 #name
 name_lb = tk.Label(window,text = "Name", font=("Times New Roman", 12), bg="white").place(x=60,y=400)

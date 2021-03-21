@@ -12,6 +12,7 @@ vaccine_status_var = tk.BooleanVar()
 covid_status_var = tk.BooleanVar()
 contacts_name_lst = []
 contacts_email_id_lst = []
+i= 0
 #function when submit button is clicked
 def submit():
   sqid=1
@@ -22,13 +23,7 @@ def submit():
   connection = mysql.connector.connect(host="192.168.43.78",database='trackerdb',user='Remote',password='Password')
   cursor = connection.cursor()
   sql = "INSERT INTO Clients (name,email_id,covid_status,vaccine_status) VALUES (%s,%s,%s,%s)"
-  cs=0
-  if(covid_status):
-    cs=1
-  vs=0
-  if(vaccine_status):
-    vs=1
-  val = (name,email_id,cs,vs)
+  val = (name,email_id,covid_status,vaccine_status)
   cursor.execute(sql, val)
   connection.commit()
   cursor.close()
@@ -47,9 +42,27 @@ def submit():
     c_email_id_lb = tk.Label(add_contacts,text = "Email ID ", font=("Times New Roman", 12), bg="white").place(x=60,y=430)
     c_email_id_entry = tk.Entry(add_contacts,textvariable = add_email_id_var, font=("Times New Roman", 12), bg="white").place(x=280,y=430)
     def add_button():
-      contacts_name_lst.append(add_name_var.get())
-      contacts_email_id_lst.append(add_email_id_var.get())
-      add_contacts.destroy()
+      # contacts_name_lst.append(add_name_var.get())
+      # contacts_email_id_lst.append(add_email_id_var.get()) 
+      for email in database:
+        if add_email_id_var.get() == email:
+          #printing name in table
+          e_name = Entry(display, width=20, fg='blue',font=('Arial',16,'bold'))               
+          e_name.grid(row=i, column=0) 
+          e_name.insert(tk.END,add_name_var.get())
+          #printing email in tabel
+          e_name = Entry(display, width=20, fg='blue',font=('Arial',16,'bold'))               
+          e_name.grid(row=i, column=1) 
+          e_name.insert(tk.END,add_email_id_var.get())
+          #printing covid status
+          e_name = Entry(display, width=20, fg='blue',font=('Arial',16,'bold'))               
+          e_name.grid(row=i, column=2) 
+          e_name.insert(tk.END,covid_status)
+          #printing vaccine satus
+          e_name = Entry(display, width=20, fg='blue',font=('Arial',16,'bold'))               
+          e_name.grid(row=i, column=3) 
+          e_name.insert(tk.END,vaccine_status) 
+          i += 1
     c_submit = tk.Button(text = "Add",command = add_button).place(x = 100,y = 500)
     add_contacts.mainloop()
   add_contacts_bt = tk.Button(display, text="Add", command=add).pack()
@@ -62,12 +75,12 @@ email_id_lb = tk.Label(window,text = "Email ID ", font=("Times New Roman", 12), 
 email_id_entry = tk.Entry(window,textvariable = email_id_var, font=("Times New Roman", 12), bg="white").place(x=280,y=430)
 #covid status
 covid_lb = tk.Label(window,text = "Are you infected with Covid-19 ?", font=("Times New Roman", 12), bg="white").place(x=60,y=460)
-covid_r1 = tk.Radiobutton(window, text="Yes", variable=covid_status_var, value= True).place(x=280,y=460)
-covid_r2 = tk.Radiobutton(window, text="No", variable=covid_status_var, value= False).place(x=330,y=460)
+covid_r1 = tk.Radiobutton(window, text="Yes", variable=covid_status_var, value= 1).place(x=280,y=460)
+covid_r2 = tk.Radiobutton(window, text="No", variable=covid_status_var, value= 0).place(x=330,y=460)
 #vaccine status
 vaccine_lb = tk.Label(window,text = "Did you get vaccine ?", font=("Times New Roman", 12), bg="white").place(x=60,y=490)
-vaccine_r1 = tk.Radiobutton(window, text="Yes", variable=vaccine_status_var, value= True).place(x=280,y=490)
-vaccine_r2 = tk.Radiobutton(window, text="No", variable=vaccine_status_var, value= False).place(x=330,y=490)
+vaccine_r1 = tk.Radiobutton(window, text="Yes", variable=vaccine_status_var, value= 1).place(x=280,y=490)
+vaccine_r2 = tk.Radiobutton(window, text="No", variable=vaccine_status_var, value= 0).place(x=330,y=490)
 #submit button
 submit_bt = tk.Button(window,text = "SUBMIT",fg="white", bg="black",command = submit).place(x = 100,y = 600)
 window.mainloop()

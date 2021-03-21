@@ -11,16 +11,16 @@ But........
 With ur kindness u got our attention;
 Every time v asked something u planted a seed Of motivation.
 
-Thankyou Zense for being there.
+Thankyou Zense for being there;
 Thankyou for showing concern and care.
 
-Thankyou for keeping us in the track.
+Thankyou for keeping us in the track;
 Thankyou for helping with what we lack.
 
-For being what u r.
+For being what u r;
 U have always been our college superstars.  
 
-It may look like We r bluffing.
+It may look like We r bluffing;
 But its actually a thankful opening.
 
 

@@ -30,3 +30,8 @@ certain topics which we were completely unaware of.
 
 Waiting for many more fun , informative activities and hackathons.
 Thank you Zense!
+
+TEAM NAME:ALPHA
+TEAM MEMBERS:
+Ankrutee Arora
+Vishnutha Sheela 

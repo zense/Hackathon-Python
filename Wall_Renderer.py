@@ -92,6 +92,7 @@ while(running):
     
     column_number=0
     Alpha=Thita-hFOV/2
+    prev_wall=-1;
     while(Alpha<=Thita+hFOV/2):
 
         Alpha1=Alpha
@@ -106,7 +107,11 @@ while(running):
         normal=-1
         distance_from_player=-1
         angle_from_normal=-1
+        c=0
+        c1=0
+        
         for i in surfaces:
+            c1+=1
             angle1=find_angle(i.pointA,[playerX,playerY])
             angle2=find_angle(i.pointB,[playerX,playerY])
             intercept=False
@@ -152,19 +157,26 @@ while(running):
                         normal=abs((slope*playerX-playerY+c)/math.sqrt(slope*slope+1))
                         distance_from_player=normal/abs(math.cos((angle_from_normal)))
                     if(dist_min>=0):
-                    	dist_min=min(distance_from_player,dist_min)
+                        if(distance_from_player<dist_min):
+                        	dist_min=distance_from_player
+                        	c=c1
                     else:
                         dist_min=distance_from_player
+                        c=c1
         if(dist_min<=0 or dist_min>256):
             brightness=255
             height_of_drawn_column=0
         else:
             brightness=255-dist_min
             height_of_drawn_column=height*(height_of_wall/2/dist_min)
-        
+        if(prev_wall==-1):
+            prev_wall=c
         pygame.draw.line(screen,(256-brightness,0,0),((column_number),(height/2-10-height_of_drawn_column)),((column_number),(height/2-height_of_drawn_column)),int(width*math.pi/1800/hFOV)+1)
         pygame.draw.line(screen,(0,brightness,0),((column_number),(height/2-height_of_drawn_column)),((column_number),(height/2+height_of_drawn_column)),int(width*math.pi/1800/hFOV)+1)
         pygame.draw.line(screen,(256-brightness,0,0),((column_number),(height/2+10+height_of_drawn_column)),((column_number),(height/2+height_of_drawn_column)),int(width*math.pi/1800/hFOV)+1)
+        if(not prev_wall==c):
+        	pygame.draw.line(screen,(256-brightness,0,0),((column_number),(height/2-height_of_drawn_column)),((column_number),(height/2+height_of_drawn_column)),10)
+        	prev_wall=c
         column_number+=width*math.pi/1800/hFOV
         
         Alpha+=math.pi/1800

@@ -12,7 +12,7 @@ vaccine_status_var = tk.BooleanVar()
 covid_status_var = tk.BooleanVar()
 contacts_name_lst = []
 contacts_email_id_lst = []
-i= 0
+i = 0
 #function when submit button is clicked
 def submit():
   sqid=1
@@ -28,7 +28,7 @@ def submit():
   connection.commit()
   cursor.close()
   connection.close()
-  display = tk.Tk()        
+  display = tk.Tk()
   display.title("Add Your Contacts")
   def add():
     add_contacts = tk.Tk()
@@ -41,31 +41,52 @@ def submit():
     #email
     c_email_id_lb = tk.Label(add_contacts,text = "Email ID ", font=("Times New Roman", 12), bg="white").place(x=60,y=430)
     c_email_id_entry = tk.Entry(add_contacts,textvariable = add_email_id_var, font=("Times New Roman", 12), bg="white").place(x=280,y=430)
-    def add_button():
-      # contacts_name_lst.append(add_name_var.get())
-      # contacts_email_id_lst.append(add_email_id_var.get()) 
+    def add_function(i):
       for email in database:
         if add_email_id_var.get() == email:
           #printing name in table
-          e_name = Entry(display, width=20, fg='blue',font=('Arial',16,'bold'))               
-          e_name.grid(row=i, column=0) 
+          e_name = tk.Entry(display, width=20, fg='blue',font=('Arial',16,'bold'))
+          e_name.grid(row = i, column=0)
           e_name.insert(tk.END,add_name_var.get())
           #printing email in tabel
-          e_name = Entry(display, width=20, fg='blue',font=('Arial',16,'bold'))               
-          e_name.grid(row=i, column=1) 
-          e_name.insert(tk.END,add_email_id_var.get())
+          e_email = tk.Entry(display, width=20, fg='blue',font=('Arial',16,'bold'))
+          e_email.grid(row=i, column=1)
+          e_email.insert(tk.END,add_email_id_var.get())
           #printing covid status
-          e_name = Entry(display, width=20, fg='blue',font=('Arial',16,'bold'))               
-          e_name.grid(row=i, column=2) 
-          e_name.insert(tk.END,covid_status)
-          #printing vaccine satus
-          e_name = Entry(display, width=20, fg='blue',font=('Arial',16,'bold'))               
-          e_name.grid(row=i, column=3) 
-          e_name.insert(tk.END,vaccine_status) 
+          e_cs = tk.Entry(display, width=20, fg='blue',font=('Arial',16,'bold'))
+          e_cs.grid(row=i, column=2)
+          e_cs.insert(tk.END,covid_status)
+          #printing vaccine status
+          e_vs = tk.Entry(display, width=20, fg='blue',font=('Arial',16,'bold'))
+          e_vs.grid(row=i, column=3)
+          e_vs.insert(tk.END,vaccine_status)
           i += 1
-    c_submit = tk.Button(text = "Add",command = add_button).place(x = 100,y = 500)
-    add_contacts.mainloop()
-  add_contacts_bt = tk.Button(display, text="Add", command=add).pack()
+    c_submit = tk.Button(text = "Add",command = add_function(i)).place(x = 100,y = 500) #button in third window
+    add_contacts.destroy()
+  def update_function():
+    update = tk.Tk()
+    update.title("Update My Status")
+    # email
+    email_id_lb = tk.Label(update, text="Email ID ", font=("Times New Roman", 12), bg="white").place(x=60, y=430)
+    email_id_entry = tk.Entry(update, textvariable=email_id_var, font=("Times New Roman", 12), bg="white").place(x=280,y=430)
+    # covid status
+    covid_lb = tk.Label(update, text="Are you infected with Covid-19 ?", font=("Times New Roman", 12),bg="white").place(x=60, y=460)
+    covid_r1 = tk.Radiobutton(update, text="Yes", variable=covid_status_var, value=1).place(x=280, y=460)
+    covid_r2 = tk.Radiobutton(update, text="No", variable=covid_status_var, value=0).place(x=330, y=460)
+    # vaccine status
+    vaccine_lb = tk.Label(window, text="Did you get vaccine ?", font=("Times New Roman", 12), bg="white").place(x=60,
+                                                                                                                y=490)
+    vaccine_r1 = tk.Radiobutton(update, text="Yes", variable=vaccine_status_var, value=1).place(x=280, y=490)
+    vaccine_r2 = tk.Radiobutton(update, text="No", variable=vaccine_status_var, value=0).place(x=330, y=490)
+    '''def function for updating these to database :
+      code
+      code
+      code '''
+    # submit button
+    submit_bt = tk.Button(update, text="Update", fg="white", bg="black", command='function for enetering values into database').place(x=100, y=600)
+    update.destroy()
+  add_contacts_bt = tk.Button(display, text="Add", command=add).pack()  # button in second window
+  update_status = tk.Button(display,text = "Update my status",command = ).pack()          # button in second window
   window.destroy()
 #name
 name_lb = tk.Label(window,text = "Name", font=("Times New Roman", 12), bg="white").place(x=60,y=400)

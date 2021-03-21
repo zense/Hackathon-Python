@@ -49,7 +49,9 @@ def submit():
       cursor.execute(sql1)
       
       database=cursor.fetchall()
-     
+      connection.commit()
+      cursor.close()
+      connection.close()
       for email in database:
         if add_email_id_var.get() == email:
           #printing name in table
@@ -86,11 +88,14 @@ def submit():
                                                                                                                 y=490)
     vaccine_r1 = tk.Radiobutton(update, text="Yes", variable=vaccine_status_var, value=1).place(x=280, y=490)
     vaccine_r2 = tk.Radiobutton(update, text="No", variable=vaccine_status_var, value=0).place(x=330, y=490)
-    '''def function for updating these to database :
-      code
-      code
-      code '''
-    # submit button
+    def update_button():
+      connection = mysql.connector.connect(host="192.168.43.78",database='trackerdb',user='Remote',password='Password')
+      cursor = connection.cursor() 
+      sql3= "Update Clients set covid_status=%s,vaccine_status=%s where email_id=%s"
+      cursor.execute(sql3,(.get(),.get(),.get()))
+      connection.commit()
+      cursor.close()
+      connection.close()
     submit_bt = tk.Button(update, text="Update", fg="white", bg="black", command='function for enetering values into database').place(x=100, y=600)
     update.destroy()
   add_contacts_bt = tk.Button(display, text="Add", command=add).pack()  # button in second window

@@ -7,7 +7,7 @@ from threading import Timer
 URL = 'https://www.amazon.in/New-Apple-iPhone-Pro-128GB/dp/B08L5VZKWT/ref=sr_1_3?dchild=1&keywords=iphone&qid=1616338851&sr=8-3'
                                 #URL of the product page(On Amazon)
 desired_price=130000             #Price below which you should be notified
-API_KEY = 'o.8UljdagUxLKUyT0IEhPHxKHSxHCYMo59'  #Access Token from pushbullet
+API_KEY = ''  #Access Token from pushbullet
 interval=1                      #Enter value in hours(If interval=2 the program checks the price every 2 hours)
 
 

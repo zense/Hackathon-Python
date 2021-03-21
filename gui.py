@@ -19,10 +19,17 @@ def submit():
   email_id = email_id_var.get()
   vaccine_status = vaccine_status_var.get()
   covid_status = covid_status_var.get()
-  connection = mysql.connector.connect(host="localhost",database='trackerdb',user='DJ',password='Password')
+  connection = mysql.connector.connect(host="192.168.43.78",database='trackerdb',user='Remote',password='Password')
   cursor = connection.cursor()
-  Query = "INSERT INTO Clients VALUE (name,email_id,covid_status,vaccine_status);"
-  result = cursor.execute(Query)
+  sql = "INSERT INTO Clients (name,email_id,covid_status,vaccine_status) VALUES (%s,%s,%s,%s)"
+  cs=0
+  if(covid_status):
+    cs=1
+  vs=0
+  if(vaccine_status):
+    vs=1
+  val = (name,email_id,cs,vs)
+  cursor.execute(sql, val)
   connection.commit()
   cursor.close()
   connection.close()

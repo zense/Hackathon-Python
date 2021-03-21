@@ -1,27 +1,49 @@
-# Hackathon-Python
-Repository for python submissions for Zense Hackathon 2021
-You have to make your python submission pull request to this repository.
+$ python3 -m pip install pyautogui# Onedrive Uploader Python Script
 
-Message from Vikas Yadav: Founder of Zense
+Include any project badges (e.g. CI) here at the top.
 
-Hi folks,
+Description of project & its goals.
 
-Very happy to see this hackathon happening again. While on campus I loved being part of events like these. A lot of my interests developed as side effects of these events. With that in mind and to encourage the spirit of innovation - I would like to announce a bonus prize of Rs 5000 from my side for the idea which I find the best. In case it's difficult to decide a single winner - please don't mind if I split the prize into two.
+The code is incomplete as 
 
-Parameters I am going to judge you on:
-- Feasibility of the idea
-- Completeness of the implementation
-- Effort you put in
-- Impact of the idea
+## Screenshots
 
-Some potential ideas you can think of:
-- Automate a mundane task which you might have to everyday using python
-- Explore the python ecosystem to find some amazing libraries - use it to solve a real-world problem around you
-- Or just make something cool
+Nothing says a lot than screenshots.
+
+## Dependencies
+
+Any dependencies required by the project.
+
+## Installation
+
+How to install on Linux...
+
+  You are required to download the Chrome Driver from https://chromedriver.storage.googleapis.com/index.html?path=89.0.4389.23/ .
+  Install Selenium using the  ```pip3 install selenium```  ( Check this out if you are stuck anywhere--->(https://youtu.be/67h3IT2lm40) ) 
+  Install pyautogui using  ```python3 -m pip install pyautogui```
+ 
+## Usage
+
+This is an incomplete project which b
 
 
-And it's not just about the award, if you are interested after the hackathon to pursue your idea further I would be happy to mentor.
+## Contribution SetUp
 
-Regards,
-Vikas
+If people would like to contribute, what steps should they take.
 
+Overview here and a link to the `CONTRIBUTION.md` file with more details
+
+
+## Code of Conduct
+
+Overview of Code of Conduct, with link to `CODE_OF_CONDUCT.MD`
+
+
+## Change log / Release history
+
+Major version & breaking changes
+
+
+## Meta data
+
+Any other useful information.

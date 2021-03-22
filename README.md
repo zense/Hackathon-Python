@@ -61,3 +61,7 @@ There under the heading of Access Token you will see an option to "Create Access
 
 Now just run the code on your terminal by python Amazon_Price_Tracker.py (or python3 Amazon_Price_Tracker.py)
 The loop which checks the price runs every 60 mins. So, the price is checked every hour and gives notification on phone if the price dropped. Else displays "Price of the Product is still more than the Desired Price." on your terminal.
+
+
+**YOUTUBE LINK OF DEMO**
+https://youtu.be/gTb-Gt7MXqE

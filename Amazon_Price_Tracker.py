@@ -52,12 +52,18 @@ def check_price():
 
 
 #In some pages price of the product is stored in id='priceblock_ourprice' and in some it is stored in id='priceblock_dealprice'
-#So taking care of both
-    a=soup.find(id='priceblock_dealprice')
-    if(a==None):
+#and some in id='priceblock_saleprice'
+
+#There may be cases that we have ignored, We will work on it and correct the code later on
+    a=soup.find(id='priceblock_ourprice')
+    if(a!=None):
         product_price1 = soup.find(id='priceblock_ourprice').get_text()
     else:
-        product_price1 = soup.find(id='priceblock_dealprice').get_text()
+        a=soup.find(id='priceblock_dealprice')
+        if(a!=None):
+            product_price1 = soup.find(id='priceblock_dealprice').get_text()
+        else:            
+            product_price1 = soup.find(id='priceblock_saleprice').get_text()
     #print(product_price1)
 
     product_price =''
